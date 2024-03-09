@@ -88,7 +88,9 @@ app.post('/api/register', newUser)
 app.post('/api/forgotpswd', changePswd)
 
 app.get('/', function (req, res) {
-    res.json({ message: "working" })
+    res
+    .status(200)
+    .send("use the post request pls")
 })
 
 app.listen(4000, () => console.log("Server is running"))
