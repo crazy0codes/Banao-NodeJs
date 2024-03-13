@@ -3,9 +3,6 @@ const Mongodb = require('mongodb')
 
 const app = express();
 
-const mongodbKey = "mongodb+srv://users:iLDKX3ph2Mmpk8fy@cluster0.pdeg90c.mongodb.net/?retryWrites=true&w=majority"
-
-
 
 const db = [
     { username: 'john_doe', password: 'P@ssw0rd' },
