@@ -1,14 +1,13 @@
-export const Post = () => {
-    const author = "Mike Tyson"
+export const Post = ({props}) => {
     return (
         <div className="post-container">
-            <img className="post-img" src="https://img.freepik.com/premium-photo/sunset-with-mountains-river-forest-lake-mountains-trees-beautiful-landscape-with-lake-background-generative-ai_961829-9817.jpg" />
+            <img className="post-img" src={props.url} />
             <div className="post-details">
-                <h2 className="post-title">RainBow</h2>
+                <h2 className="post-title">{props.title}</h2>
                 <p className="post-description">
-                    This is something that tells about the post that made by the user
+                    {props.description}
                 </p>
-                <i className="post-author">{`post by ${author}`}</i>
+                <i className="post-author">{`post by ${props.author}`}</i>
             </div>
         </div>
     )

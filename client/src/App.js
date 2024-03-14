@@ -9,7 +9,11 @@ function App() {
   const [postList, setPostList] = useState([])
 
   async function loadPosts() {
-    const postRes = await fetch('https://banao-nodejs.onrender.com/api/post')
+    const postRes = await fetch('http://banao-nodejs.onrender.com/api/post',{
+      method : "GET"
+    })
+    const data = await postRes.json()
+    console.log(data)
   }
 
   loadPosts()
@@ -18,7 +22,7 @@ function App() {
     <>
     <Navbar/>
     <Login/>
-    <Post/> 
+
     </>
   );
 }

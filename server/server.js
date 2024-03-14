@@ -82,10 +82,6 @@ async function changePswd(req, res) {
     }
 }
 
-async function addpost(req,res) {
-    
-}
-
 
 app.post('/api/login', userLogin)
 

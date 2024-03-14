@@ -92,8 +92,7 @@ async function addPost(req, res) {
 
 async function allPosts(req, res) {
     res.status(200)
-    res.setHeader('Content-Type', 'application/json');
-    res.json({posts})
+    res.json(posts)
 }
 
 module.exports = router;
