@@ -9,7 +9,7 @@ function App() {
   const [postList, setPostList] = useState([])
 
   async function loadPosts() {
-    const postRes = await fetch('http://localhost:4000/api/post/')
+    const postRes = await fetch('https://banao-nodejs.onrender.com/api/post')
   }
 
   loadPosts()

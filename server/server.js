@@ -1,11 +1,6 @@
 const express = require('express')
-const Mongodb = require('mongodb')
-
+const post = require('./postRoutes')
 const app = express();
-
-const mongodbKey = "mongodb+srv://users:iLDKX3ph2Mmpk8fy@cluster0.pdeg90c.mongodb.net/?retryWrites=true&w=majority"
-
-
 
 const db = [
     { username: 'john_doe', password: 'P@ssw0rd' },
@@ -99,7 +94,7 @@ app.post('/api/register', newUser)
 app.post('/api/forgotpswd', changePswd)
 
 
-app.post('/api/addpost', addpost)
+app.use('/api/post', post)
 
 app.get('/', function (req, res) {
     res
