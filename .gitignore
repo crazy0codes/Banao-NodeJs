@@ -1,1 +1,3 @@
-/node_modules
+server/node_modules
+server/.env
+cilent/node_modules
