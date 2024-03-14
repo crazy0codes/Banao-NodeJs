@@ -1,6 +1,7 @@
 const express = require('express')
 const post = require('./postRoutes')
 const app = express();
+const cors = require('cors')
 
 const db = [
     { username: 'john_doe', password: 'P@ssw0rd' },
@@ -90,7 +91,7 @@ app.post('/api/register', newUser)
 app.post('/api/forgotpswd', changePswd)
 
 
-app.use('/api/post', post)
+app.use('/api/post',cors(), post)
 
 app.get('/', function (req, res) {
     res
