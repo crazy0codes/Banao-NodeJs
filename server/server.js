@@ -1,8 +1,11 @@
-require('dotenv').config()
 const express = require('express')
-const post_router = require('./postRoutes')
+const Mongodb = require('mongodb')
 
 const app = express();
+
+const mongodbKey = "mongodb+srv://users:iLDKX3ph2Mmpk8fy@cluster0.pdeg90c.mongodb.net/?retryWrites=true&w=majority"
+
+
 
 const db = [
     { username: 'john_doe', password: 'P@ssw0rd' },
@@ -13,16 +16,6 @@ const db = [
 ];
 
 
-app.post('/api/login', userLogin)
-
-app.post('/api/register', newUser)
-
-app.post('/api/forgotpswd', changePswd)
-
-
-app.use('/api/post', post_router)
-
-app.listen(4000, () => console.log("Server is running"))
 
 
 async function userLogin(req, res) {
@@ -94,9 +87,24 @@ async function changePswd(req, res) {
     }
 }
 
+async function addpost(req,res) {
+    
+}
+
+
+app.post('/api/login', userLogin)
+
+app.post('/api/register', newUser)
+
+app.post('/api/forgotpswd', changePswd)
+
+
+app.post('/api/addpost', addpost)
 
 app.get('/', function (req, res) {
     res
     .status(200)
     .send("use the post request pls")
 })
+
+app.listen(4000, () => console.log("Server is running"))
