@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-export const Navbar = () => {
-
+export const Navbar = ({props}) => { 
+    const setPostList = props.setPostList;
     const [post , setPost] = useState({
         url : "",
         author : "",
@@ -14,8 +14,10 @@ export const Navbar = () => {
             method : "POST",
             body : post
         })
-        const data = await sendPost.json()
-        alert(JSON.stringify(data))
+        if(!sendPost.ok) {
+          alert(sendPost.status)}
+        
+
     }
 
 
