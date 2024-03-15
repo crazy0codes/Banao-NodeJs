@@ -18,7 +18,7 @@ const Login = () => {
 
 
     return (
-        <div>
+        <div className='login-user'>
             <h2>Login</h2>
             <h4>{JSON.stringify(user)}</h4>
             <input
