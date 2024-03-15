@@ -11,16 +11,15 @@ function App() {
   async function loadPosts() {
     const postRes = await fetch('https://banao-nodejs.onrender.com/api/post')
     const data = await postRes.json()
-    console.log(data)
+    setPostList(data)
   }
 
-  loadPosts()
 
   return (
     <>
     <Navbar/>
     <Login/>
-
+    {postList.map(obj => <Post props={obj}/>)}
     </>
   );
 }

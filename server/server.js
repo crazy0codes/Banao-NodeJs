@@ -83,6 +83,7 @@ async function changePswd(req, res) {
     }
 }
 
+app.use(cors())
 
 app.post('/api/login', userLogin)
 
@@ -91,7 +92,7 @@ app.post('/api/register', newUser)
 app.post('/api/forgotpswd', changePswd)
 
 
-app.use('/api/post',cors(), post)
+app.use('/api/post', post)
 
 app.get('/', function (req, res) {
     res
