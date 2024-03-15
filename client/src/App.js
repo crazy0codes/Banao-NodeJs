@@ -18,7 +18,6 @@ function App() {
   return (
     <>
     <Navbar/>
-    <Login/>
     {postList.map(obj => <Post props={obj}/>)}
     </>
   );
