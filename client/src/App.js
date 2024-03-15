@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+    <Navbar props={setPostList}/>
     {postList.map(obj => <Post props={obj}/>)}
     </>
   );
